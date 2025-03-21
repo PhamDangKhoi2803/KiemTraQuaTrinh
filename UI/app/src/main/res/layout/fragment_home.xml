@@ -45,7 +45,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:background="@drawable/custom_img"
-            android:src="@drawable/person" />
+            android:src="@drawable/user_2" />
     </LinearLayout>
 
 
@@ -54,7 +54,9 @@
         android:id="@+id/edtSearch"
         android:layout_width="0dp"
         android:layout_height="48dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/custom_edittext"
         android:drawableLeft="@drawable/search"
         android:drawablePadding="8dp"
@@ -67,16 +69,20 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bannerLayout"
         android:layout_width="0dp"
-        android:layout_height="120dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:background="#ffc4ac
-"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/custom_edittext"
+        android:backgroundTint="#ffc4ac"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edtSearch">
 
         <!-- Ảnh Banner bên trái -->
+
+        <!-- Nhóm chứa TextView và Button bên phải -->
         <ImageView
             android:id="@+id/ivBannerImage"
             android:layout_width="200dp"
@@ -85,9 +91,9 @@
             android:src="@drawable/image_banner__1_"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-        <!-- Nhóm chứa TextView và Button bên phải -->
         <LinearLayout
             android:id="@+id/bannerContent"
             android:layout_width="0dp"
@@ -139,6 +145,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCategories"
+        android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/tvCategories"
