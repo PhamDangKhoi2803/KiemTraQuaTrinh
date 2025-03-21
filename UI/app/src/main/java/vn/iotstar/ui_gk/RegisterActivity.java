@@ -21,7 +21,7 @@ import vn.iotstar.ui_gk.api.RetrofitClient;
 import vn.iotstar.ui_gk.model.RegisterRequest;
 
 public class RegisterActivity extends AppCompatActivity {
-
+//nghia nhan
     EditText name,email,pass;
     Button btt;
 
@@ -97,7 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
-
+/nghia nhan
 
 
 }
