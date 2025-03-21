@@ -46,11 +46,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                 .load(category.getCateImage()) // URL ảnh
                 .into(holder.imgCate); // Gán vào ImageView
 
-        holder.itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(context, ProductCategoryActivity.class);
-            intent.putExtra("CATEGORY_ID", category.getCateId());
-            context.startActivity(intent);
-        });
+//        holder.itemView.setOnClickListener(v -> {
+//            Intent intent = new Intent(context, ProductCategoryActivity.class);
+//            intent.putExtra("CATEGORY_ID", category.getCateId());
+//            context.startActivity(intent);
+//        });
     }
     @Override
     public int getItemCount() {
