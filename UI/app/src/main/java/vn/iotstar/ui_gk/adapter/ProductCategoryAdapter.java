@@ -19,6 +19,7 @@ import java.util.List;
 import vn.iotstar.ui_gk.R;
 import vn.iotstar.ui_gk.model.Product;
 
+// Tran Tien Dat - 22110308
 public class ProductCategoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
     private List<Product> productList;
