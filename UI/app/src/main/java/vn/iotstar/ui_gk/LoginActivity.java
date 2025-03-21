@@ -48,15 +48,15 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login() {
-        String email = etUsername.getText().toString().trim();
+        String username = etUsername.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
 
-        if (email.isEmpty() || password.isEmpty()) {
+        if (username.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        LoginRequest loginRequest = new LoginRequest(email, password);
+        LoginRequest loginRequest = new LoginRequest(username, password);
         Call<String> call = apiService.login(loginRequest);
 
         call.enqueue(new Callback<String>() {
@@ -76,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                         // Nếu API trả về username (tức là đăng nhập thành công)
                         SharedPreferences sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString("username", email); // Lưu username vào SharedPreferences
+                        editor.putString("username", username); // Lưu username vào SharedPreferences
                         editor.putBoolean("active", true);
                         editor.apply();
 
