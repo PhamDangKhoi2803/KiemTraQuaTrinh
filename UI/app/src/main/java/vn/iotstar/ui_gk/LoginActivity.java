@@ -19,6 +19,8 @@ import retrofit2.Response;
 import vn.iotstar.ui_gk.api.APIService;
 import vn.iotstar.ui_gk.api.RetrofitClient;
 import vn.iotstar.ui_gk.model.LoginRequest;
+import vn.iotstar.ui_gk.screen.activity.UserMainActivity;
+import vn.iotstar.ui_gk.screen.fragment.HomeFragment;
 
 //Nguyễn Văn Hùng - 22110338
 public class LoginActivity extends AppCompatActivity {
@@ -79,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                         editor.apply();
 
                         Toast.makeText(LoginActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        startActivity(new Intent(LoginActivity.this, UserMainActivity.class));
                         finish();
                     }
                 } else {
