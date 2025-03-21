@@ -1,0 +1,10 @@
+<shape xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="ExtraText">
+    <solid android:color="#FFFFFF"/> <!-- Màu nền của item -->
+    <stroke
+        android:width="1dp"
+        android:color= "#ddd" />
+    <corners android:radius="10dp"/> <!-- Bo góc (nếu cần) -->
+    <padding android:left="8dp" android:right="8dp" android:top="8dp" android:bottom="8dp"/>
+</shape>
