@@ -105,7 +105,7 @@ public class HomeFragment extends Fragment {
         // Gọi API để lấy danh mục
         getALlCategory();
 
-
+        //Tran Trong Nghia-22110380
         SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("UserData", MODE_PRIVATE);
         TextView tv_username = view.findViewById(R.id.tvUserName);
         tv_username.setText("Hi! "+ sharedPreferences.getString("username", "dell co"));

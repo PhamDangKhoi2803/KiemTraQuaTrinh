@@ -33,6 +33,7 @@ public class StartActivity extends AppCompatActivity {
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Tran Trong Nghia-22110380
                 if(isLoggedIn()){
                     //Bat dau LoginActivity
                     startActivity(new Intent(StartActivity.this,LoginActivity.class));
@@ -43,7 +44,7 @@ public class StartActivity extends AppCompatActivity {
             }
         });
     }
-
+    //Tran Trong Nghia-22110380
     private boolean isLoggedIn() {
         SharedPreferences preferences = getSharedPreferences("UserData", MODE_PRIVATE);
         return preferences.getBoolean("isLoggedIn", false); // Mặc định là false nếu chưa đăng nhập
