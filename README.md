@@ -17,6 +17,12 @@
 
 ![intro](./image/Readme/register.jpg)
 
+### 1.4 Xác thực OTP
+
+![xac_thuc_OTP](./image/Readme/xac_thuc_OTP.jpg)
+
+![xac_thuc_thanh_cong](./image/Readme/xac_thuc_thanh_cong.jpg)
+
 ### 1.4 Products page
 
 ![intro](./image/Readme/products_page.jpg)
