@@ -5,9 +5,9 @@ import com.google.gson.annotations.SerializedName;
 public class Product {
     private Long id;
     private String name;
-    private String image;
-    private double price;
     private String description;
+    private Double price;
+    private String image;
 
     public Product(Long id, String name, String image, double price, String description) {
         this.id = id;
