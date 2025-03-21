@@ -6,17 +6,18 @@ import android.content.SharedPreferences;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class RetrofitClient {
     private static final String BASE_URL = "http://10.0.2.2:8081/"; // URL của API
 
     private static Retrofit retrofit;
     public static Retrofit getRetrofit(){
-        if(retrofit ==null){
+        if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    //Duong dan API
                     .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(ScalarsConverterFactory.create()) // Xử lý String
+                    .addConverterFactory(GsonConverterFactory.create()) // Xử lý JSON
                     .build();
         }
         return retrofit;
