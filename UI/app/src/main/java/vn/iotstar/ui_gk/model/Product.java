@@ -3,13 +3,13 @@ package vn.iotstar.ui_gk.model;
 import com.google.gson.annotations.SerializedName;
 
 public class Product {
-    private int id;
+    private Long id;
     private String name;
     private String image;
     private double price;
     private String description;
 
-    public Product(int id, String name, String image, double price, String description) {
+    public Product(Long id, String name, String image, double price, String description) {
         this.id = id;
         this.name = name;
         this.image = image;
@@ -17,11 +17,11 @@ public class Product {
         this.description = description;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
