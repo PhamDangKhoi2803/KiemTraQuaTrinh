@@ -1,10 +1,14 @@
 package vn.iotstar.ui_gk.screen.fragment;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -101,6 +105,10 @@ public class HomeFragment extends Fragment {
         // Gọi API để lấy danh mục
         getALlCategory();
 
+        //Tran Trong Nghia-22110380
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("UserData", MODE_PRIVATE);
+        TextView tv_username = view.findViewById(R.id.tvUserName);
+        tv_username.setText("Hi! "+ sharedPreferences.getString("username", "dell co"));
         return view;
     }
 

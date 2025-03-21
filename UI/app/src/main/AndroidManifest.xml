@@ -20,6 +20,9 @@
             android:name=".screen.activity.UserMainActivity"
             android:exported="false" />
         <activity
+            android:name=".ProductCategoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity

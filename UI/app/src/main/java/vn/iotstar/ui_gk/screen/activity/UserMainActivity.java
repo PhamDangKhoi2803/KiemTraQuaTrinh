@@ -11,6 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import vn.iotstar.ui_gk.R;
 import vn.iotstar.ui_gk.screen.fragment.HomeFragment;
 
+//Tran Trong Nghia-22110380
 public class UserMainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     HomeFragment homeFragment =new HomeFragment();

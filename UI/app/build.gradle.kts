@@ -47,4 +47,5 @@ dependencies {
     //load ảnh với Glide
     implementation ("com.github.bumptech.glide:glide:4.14.2")
     implementation ("com.squareup.retrofit2:converter-scalars:2.9.0")
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
 }

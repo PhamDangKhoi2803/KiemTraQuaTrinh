@@ -1,6 +1,7 @@
 package vn.iotstar.ui_gk;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -10,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import vn.iotstar.ui_gk.screen.activity.UserMainActivity;
 
 // 22110385 - LeHuynhNhuNguyet
 public class StartActivity extends AppCompatActivity {
@@ -30,10 +33,20 @@ public class StartActivity extends AppCompatActivity {
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                //Bat dau LoginActivity
-                startActivity(new Intent(StartActivity.this,LoginActivity.class));
+                //Tran Trong Nghia-22110380
+                if(isLoggedIn()){
+                    //Bat dau LoginActivity
+                    startActivity(new Intent(StartActivity.this,LoginActivity.class));
+                }
+                else{
+                    startActivity(new Intent(StartActivity.this, UserMainActivity.class));
+                }
             }
         });
+    }
+    //Tran Trong Nghia-22110380
+    private boolean isLoggedIn() {
+        SharedPreferences preferences = getSharedPreferences("UserData", MODE_PRIVATE);
+        return preferences.getBoolean("isLoggedIn", false); // Mặc định là false nếu chưa đăng nhập
     }
 }

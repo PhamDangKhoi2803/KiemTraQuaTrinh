@@ -17,6 +17,7 @@ import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
+import vn.iotstar.ui_gk.ProductCategoryActivity;
 import vn.iotstar.ui_gk.R;
 import vn.iotstar.ui_gk.model.Category;
 
@@ -53,10 +54,10 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
         holder.itemView.setOnClickListener(v -> {
             Log.d("id", ""+category.getCategoryId());
-//            Intent intent = new Intent(context, ProductCategoryActivity.class);
-//            intent.putExtra("id", category.getCategoryId());
-//            intent.putExtra("name", category.getCategoryName());
-//            context.startActivity(intent);
+            Intent intent = new Intent(context, ProductCategoryActivity.class);
+            intent.putExtra("id", category.getCategoryId());
+            intent.putExtra("name", category.getCategoryName());
+            context.startActivity(intent);
         });
     }
     @Override
