@@ -6,7 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.List;
 
+//PhamDangKhoi 22110357
 @Entity
 @Data
 @Table(name = "Categories")
@@ -17,6 +19,9 @@ public class Category implements Serializable {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int categoryId;
     private String categoryName;
+
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Product> products;
 
     public int getCategoryId() {
         return categoryId;
@@ -32,5 +37,13 @@ public class Category implements Serializable {
 
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 }
