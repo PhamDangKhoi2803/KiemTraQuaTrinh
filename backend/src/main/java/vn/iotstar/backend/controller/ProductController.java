@@ -17,8 +17,8 @@ import java.util.List;
 public class ProductController {
     @Autowired
     private ProductService productService;
-    @GetMapping("/{id}")
-    public ResponseEntity<List<Product>> findAllByCategory_CategoryIdOrderByPriceAsc(@PathVariable Long id) {
-        return ResponseEntity.ok(productService.findByCategoryAndOrderByPrice(id));
+    @GetMapping("/{id}/{page}")
+    public ResponseEntity<List<Product>> findAllByCategory_CategoryIdOrderByPriceAsc(@PathVariable Long id, @PathVariable int page) {
+        return ResponseEntity.ok(productService.findByCategoryAndOrderByPrice(id, page));
     }
 }
