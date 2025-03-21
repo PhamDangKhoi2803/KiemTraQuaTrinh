@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_margin="5dp"
+    android:background="@drawable/category_border">
+
+    <ImageView
+        android:id="@+id/imgCate"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+
+        />
+
+    <TextView
+        android:id="@+id/txtCateName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:text="Food Name"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
+    <!--
+    vophuhao-->
