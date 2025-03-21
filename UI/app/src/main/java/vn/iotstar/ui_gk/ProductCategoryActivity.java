@@ -30,7 +30,7 @@ import vn.iotstar.ui_gk.model.Product;
 public class ProductCategoryActivity extends AppCompatActivity {
     private ProductCategoryAdapter productCategoryAdapter;
     private RecyclerView rcvContainer;
-    private List<Product> productList;
+    private List<Product> productList, moreProducts;
     boolean isLoading = false;
     long categoryId;
     String categoryName;
@@ -110,33 +110,45 @@ public class ProductCategoryActivity extends AppCompatActivity {
             }
         });
     }
-    private int page = 1; // Biến theo dõi trang hiện tại
+    private int page = 0; // Biến theo dõi trang hiện tại
 
     private void LoadMore() {
+        // Thêm phần tử null để hiển thị ProgressBar
+        productList.add(null);
+        productCategoryAdapter.notifyItemInserted(productList.size() - 1);
 
-    }
+        new Handler().postDelayed(() -> {
+            // Xóa phần tử loading
+            int loadingPosition = productList.size() - 1;
+            productList.remove(loadingPosition);
+            productCategoryAdapter.notifyItemRemoved(loadingPosition);
 
+            // Tăng page trước khi gọi API
+            page++;
 
-    private List<Product> fetchMoreProducts(int page) {
-        List<Product> moreProducts = new ArrayList<>();
-
-        APIService apiService = RetrofitClient.getRetrofit().create(APIService.class);
-        apiService.getProducts(categoryId, page).enqueue(new Callback<List<Product>>() {
-            @Override
-            public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    moreProducts.addAll(response.body());
-                    Log.d("Logg", moreProducts.size() + "");
-                    productCategoryAdapter.notifyDataSetChanged();
+            APIService apiService = RetrofitClient.getRetrofit().create(APIService.class);
+            apiService.getProducts(categoryId, page).enqueue(new Callback<List<Product>>() {
+                @Override
+                public void onResponse(@NonNull Call<List<Product>> call, @NonNull Response<List<Product>> response) {
+                    if (response.isSuccessful() && response.body() != null) {
+                        List<Product> newProducts = response.body();
+                        int startPosition = productList.size();
+                        productCount += newProducts.size();
+                        textView.setText(categoryName + ": " + productCount);
+                        productList.addAll(newProducts);
+                        productCategoryAdapter.notifyItemRangeInserted(startPosition, newProducts.size());
+                        Log.d("Logg", newProducts.size() + " sản phẩm được tải");
+                    }
+                    isLoading = false;
                 }
-            }
 
-            @Override
-            public void onFailure(Call<List<Product>> call, Throwable t) {
-                Log.d("API Error", "Không thể tải thêm sản phẩm: " + t.getMessage());
-            }
-        });
-
-        return moreProducts;
+                @Override
+                public void onFailure(@NonNull Call<List<Product>> call, @NonNull Throwable t) {
+                    Log.e("API Error", "Không thể tải thêm sản phẩm: " + t.getMessage());
+                    isLoading = false;
+                }
+            });
+        }, 2000);
     }
+
 }
