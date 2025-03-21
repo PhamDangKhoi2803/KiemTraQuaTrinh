@@ -13,11 +13,15 @@
 
 ![intro](./image/Readme/login.jpg)
 
-### 1.3 Products page
+### 1.3 Register
+
+![intro](./image/Readme/register.jpg)
+
+### 1.4 Products page
 
 ![intro](./image/Readme/products_page.jpg)
 
-### 1.4 Main
+### 1.5 Main
 
 ![main](./image/Readme/main.jpg)
 
