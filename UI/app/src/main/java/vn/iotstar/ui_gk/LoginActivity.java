@@ -22,7 +22,7 @@ import vn.iotstar.ui_gk.model.LoginRequest;
 
 //Nguyễn Văn Hùng - 22110338
 public class LoginActivity extends AppCompatActivity {
-    private EditText etEmail, etPassword;
+    private EditText etUsername, etPassword;
     private ImageView img_btnLogin;
     private Button bttRegister;
     private APIService apiService;
@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.login_layout);
 
-        etEmail = findViewById(R.id.editTextEmailAddress);
+        etUsername = findViewById(R.id.editTextUsername);
         etPassword = findViewById(R.id.editTextPassword);
         img_btnLogin = findViewById(R.id.lg_imageButton);
         bttRegister = findViewById(R.id.btt_Register);
@@ -46,15 +46,15 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login() {
-        String email = etEmail.getText().toString().trim();
+        String username = etUsername.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
 
-        if (email.isEmpty() || password.isEmpty()) {
+        if (username.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        LoginRequest loginRequest = new LoginRequest(email, password);
+        LoginRequest loginRequest = new LoginRequest(username, password);
         Call<String> call = apiService.login(loginRequest);
 
         call.enqueue(new Callback<String>() {
