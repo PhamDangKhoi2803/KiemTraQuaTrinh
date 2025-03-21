@@ -98,8 +98,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private void goToRegister() {
-//        Intent intent = new Intent(this, RegisterActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
     }
 
 }
