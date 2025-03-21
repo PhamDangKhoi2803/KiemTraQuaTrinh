@@ -22,6 +22,7 @@ public interface APIService {
     @POST("login")
     Call<String> login(@Body LoginRequest loginRequest);
 
+    //vophuhao
     @GET("/api/categories")
     Call<List<Category>> getAllCate();
 
@@ -29,9 +30,12 @@ public interface APIService {
     @GET("/api/product/{id}/{page}")
     Call<List<Product>> getProducts(@Path("id") Long id, @Path("page") int page);
 
+
+    //Ta Nghia Nhan
     @POST("/register")
     Call<String> Register(@Body RegisterRequest registerRequest);
 
+    //Ta Nghia Nhan
     @PUT("/verify-account")
     Call<String> veriOTP(@Query("email") String email, @Query("otp") String otp);
 }
