@@ -108,9 +108,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public String login(LoginModel loginModel) {
         User user = userRepository.findByUsername(loginModel.getUsername());
+        if (user == null) {
+            return "Invalid username or password!!!";
+        }
         String password = user.getPassword();
 
-        if(user == null || !user.getPassword().equals(password)) {
+        if(!user.getPassword().equals(password)) {
             return "Invalid username or password!!!";
         }
         else if(!user.isActive()) {

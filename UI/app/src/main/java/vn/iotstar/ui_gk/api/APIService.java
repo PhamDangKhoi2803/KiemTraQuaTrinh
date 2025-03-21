@@ -7,6 +7,6 @@ import vn.iotstar.ui_gk.model.LoginRequest;
 
 public interface APIService {
 //    Nguyễn Văn Hùng - 22110338
-    @POST("auth/login")
+    @POST("login")
     Call<String> login(@Body LoginRequest loginRequest);
 }
