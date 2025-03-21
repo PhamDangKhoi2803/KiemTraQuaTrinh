@@ -12,7 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class otpActivity extends AppCompatActivity {
-
+//nghia nhan
     Button button;
 
     @SuppressLint("MissingInflatedId")
@@ -32,6 +32,6 @@ public class otpActivity extends AppCompatActivity {
                 startActivity(new Intent(otpActivity.this, LoginActivity.class)));
     }
 
-
+//nghia nhan
 
 }
