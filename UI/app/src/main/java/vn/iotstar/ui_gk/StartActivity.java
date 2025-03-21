@@ -11,6 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+// 22110385 - LeHuynhNhuNguyet
 public class StartActivity extends AppCompatActivity {
 
     TextView startBtn;
