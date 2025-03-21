@@ -20,7 +20,7 @@ import vn.iotstar.ui_gk.api.APIService;
 import vn.iotstar.ui_gk.api.RetrofitClient;
 
 public class otp_ver extends AppCompatActivity {
-
+//phuhao
     EditText eetOtp1,eetOtp2,eetOtp3,eetOtp4,eetOtp5,eetOtp6;
     APIService apiService;
 
@@ -86,4 +86,5 @@ public class otp_ver extends AppCompatActivity {
             }
         });
     }
+   // phuhao
 }
