@@ -1,4 +1,4 @@
-package vn.iotstar.ui_gk;
+package vn.iotstar.ui_gk.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +10,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import vn.iotstar.ui_gk.R;
 import vn.iotstar.ui_gk.screen.activity.UserMainActivity;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
