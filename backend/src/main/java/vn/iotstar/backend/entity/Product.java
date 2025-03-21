@@ -1,6 +1,7 @@
 package vn.iotstar.backend.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,7 +20,9 @@ public class Product {
     private Long id;
     private String name;
     private String description;
-
+    private String image;
+    private double price;
+    @JsonIgnore
     @ManyToOne
     private Category category;
 }
