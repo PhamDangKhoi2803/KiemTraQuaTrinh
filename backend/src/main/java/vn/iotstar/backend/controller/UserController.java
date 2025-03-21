@@ -12,6 +12,7 @@ import vn.iotstar.backend.model.LoginModel;
 import vn.iotstar.backend.model.RegisterModel;
 import vn.iotstar.backend.service.UserService;
 
+//Pham Ngoc Hoa 22110330
 @RestController
 public class UserController {
 

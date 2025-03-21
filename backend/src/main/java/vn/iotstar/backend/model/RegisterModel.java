@@ -1,5 +1,6 @@
 package vn.iotstar.backend.model;
 
+//Pham Ngoc Hoa 22110330
 public class RegisterModel {
 
     private String username;

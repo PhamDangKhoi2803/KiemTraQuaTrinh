@@ -1,5 +1,6 @@
 package vn.iotstar.backend.model;
 
+//Pham Ngoc Hoa 22110330
 public class LoginModel {
     private String username;
     private String password;
