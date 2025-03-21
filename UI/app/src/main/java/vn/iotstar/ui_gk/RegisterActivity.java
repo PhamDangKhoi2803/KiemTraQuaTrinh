@@ -97,7 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
-/nghia nhan
+//nghia nhan
 
 
 }
