@@ -10,7 +10,6 @@ import vn.iotstar.backend.service.CategoryService;
 
 import java.util.List;
 
-//PhamDangKhoi 22110357
 @RestController
 @RequestMapping("/api/categories")
 public class CategoryController {
