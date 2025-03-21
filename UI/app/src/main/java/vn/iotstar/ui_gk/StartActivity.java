@@ -31,8 +31,8 @@ public class StartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                // Bat dau LoginActivity
-                //startActivity(new Intent(StartActivity.this,LoginActivity.class));
+                //Bat dau LoginActivity
+                startActivity(new Intent(StartActivity.this,LoginActivity.class));
             }
         });
     }
